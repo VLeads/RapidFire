@@ -1,10 +1,8 @@
 .homepage__main {
     width: 100%;
     padding: 1rem 2rem;
+    padding-top: 0;
     min-width: fit-content;
-    /* overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none; */
     height: 100%;
     border-left: 1px solid var(--COLOR-TEXT-NORMAL);
     border-right: 1px solid var(--COLOR-TEXT-NORMAL);
@@ -15,5 +13,7 @@
 }
 
 .homepage__header {
-    background-color: var(--COLOR-BACKGROUND)
+    background-color: var(--COLOR-BACKGROUND);
+    position: sticky;
+    top: 0;
 }
