@@ -1,12 +1,14 @@
+import React, { useState } from "react";
 import { LeftSidebarData } from "data/left-sidebar-data";
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./sidebar.module.css";
 import vishalpic from "assets/vishalpic.png";
-import { OptionHorizontalIcon } from "assets/icons/icons";
+import { CheckIcon, OptionHorizontalIcon } from "assets/icons/icons";
 
 export const LeftSidebar = () => {
   const location = useLocation();
+
+  const [isUserAccountOpen, setIsUserAccountOpen] = useState(false);
 
   const { logoImg, links } = LeftSidebarData;
 
@@ -48,22 +50,55 @@ export const LeftSidebar = () => {
               })}
             </ul>
 
-            <button className={`btn btn-primary ${styles.btnTweet}`}>
+            {/* <button className={`btn btn-primary ${styles.btnTweet}`}>
               Broadcast
-            </button>
+            </button> */}
           </div>
+          <div className={styles.userAccountParent}>
+            <div
+              className={styles.userAccount}
+              onClick={() => setIsUserAccountOpen((prev) => !prev)}
+            >
+              <div>
+                <img
+                  src={vishalpic}
+                  className={styles.userPic}
+                  loading="lazy"
+                />
+              </div>
+              <div className={styles.userDetails}>
+                <p className={styles.userName}>Vishal Kumar</p>
+                <p>@Vishalk01234</p>
+              </div>
 
-          <div className={styles.userAccount}>
-            <div>
-              <img src={vishalpic} className={styles.userPic} loading="lazy" />
+              <div className={styles.options}>
+                <OptionHorizontalIcon />
+              </div>
             </div>
-            <div className={styles.userDetails}>
-              <p className={styles.userName}>Vishal Kumar</p>
-              <p>@Vishalk01234</p>
-            </div>
-            <div className={styles.options}>
-              <OptionHorizontalIcon />
-            </div>
+            {isUserAccountOpen && (
+              <div className={styles.userAccountModal}>
+                <div className={styles.userAccountModalOption}>
+                  <div>
+                    <img
+                      src={vishalpic}
+                      className={styles.userPic}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.userDetails}>
+                    <p className={styles.userName}>Vishal Kumar</p>
+                    <p>@Vishalk01234</p>
+                  </div>
+
+                  <div className={styles.checkIcon}>
+                    <CheckIcon />
+                  </div>
+                </div>
+                <button className={`btn ${styles.logoutBtn}`}>
+                  Logout @Vishalk01234
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </nav>

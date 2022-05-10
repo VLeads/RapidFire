@@ -2,11 +2,12 @@ import {
   OutlineBookmarkIcon,
   ChatOutlineIcon,
   HeartOutlineIcon,
+  FilledBookmarkIcon,
 } from "assets/icons/icons";
 import React from "react";
 import styles from "./post.module.css";
 
-export const Post = ({ displayName, username, text, avatar }) => {
+export const Post = ({ displayName, username, text, avatar, bookmark }) => {
   return (
     <div className={styles.post}>
       <div className={styles.postAvatar}>
@@ -30,7 +31,7 @@ export const Post = ({ displayName, username, text, avatar }) => {
         <div className={styles.postFooter}>
           <ChatOutlineIcon />
           <HeartOutlineIcon />
-          <OutlineBookmarkIcon />
+          {bookmark ? <FilledBookmarkIcon /> : <OutlineBookmarkIcon />}
         </div>
       </div>
     </div>
