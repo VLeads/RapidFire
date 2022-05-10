@@ -55,7 +55,7 @@ export const LeftSidebar = () => {
 
           <div className={styles.userAccount}>
             <div>
-              <img src={vishalpic} className={styles.userPic} />
+              <img src={vishalpic} className={styles.userPic} loading="lazy" />
             </div>
             <div className={styles.userDetails}>
               <p className={styles.userName}>Vishal Kumar</p>

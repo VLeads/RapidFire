@@ -10,7 +10,12 @@ export const Post = ({ displayName, username, text, avatar }) => {
   return (
     <div className={styles.post}>
       <div className={styles.postAvatar}>
-        <img src={avatar} alt="avatar" className={styles.avatarImg} />
+        <img
+          src={avatar}
+          alt="avatar"
+          className={styles.avatarImg}
+          loading="lazy"
+        />
       </div>
       <div className={styles.postBody}>
         <div className={styles.postHeader}>

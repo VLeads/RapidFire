@@ -4,15 +4,14 @@ import vishalPic from "assets/vishalpic.png";
 import { EmojiIcon, ImageIcon } from "assets/icons/icons";
 
 export const TweetBox = () => {
-
-const [charCount, setCharCount] = useState(210);
+  const [charCount, setCharCount] = useState(210);
 
   return (
     <div className={styles.tweetBoxContainer}>
       <form>
         <div className={styles.tweetBoxInput}>
           <div className={`avatar ${styles.avatarPic}`}>
-            <img src={vishalPic} alt="vishal avatar" />
+            <img src={vishalPic} alt="vishal avatar" loading="lazy" />
           </div>
           <div className={styles.tweetBox}>
             <textarea

@@ -5,7 +5,7 @@ export const User = ({ imgsrc, username, userid }) => {
   return (
     <div className={styles.userAccount}>
       <div>
-        <img src={imgsrc} className={styles.userPic} />
+        <img src={imgsrc} className={styles.userPic} loading="lazy" />
       </div>
       <div className={styles.userDetails}>
         <p className={styles.userName}>{username}</p>
