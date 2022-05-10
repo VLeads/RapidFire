@@ -1,6 +1,7 @@
 :root {
   --COLOR-TEXT-NORMAL: #2b333f;
   --COLOR-BACKGROUND: #f3f3fa;
+  --COLOR-BACKGROUND-OPACITY: rgba(243, 243, 250, 0.522);
   --COLOR-DARK: #1c1b1b;
 }
 

@@ -13,7 +13,10 @@
 }
 
 .homepage__header {
-    background-color: var(--COLOR-BACKGROUND);
+    background-color: var(--COLOR-BACKGROUND-OPACITY);
     position: sticky;
     top: 0;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+
 }

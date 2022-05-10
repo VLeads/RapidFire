@@ -1,7 +1,7 @@
 import {
+  OutlineBookmarkIcon,
   ChatOutlineIcon,
   HeartOutlineIcon,
-  ShareIcon,
 } from "assets/icons/icons";
 import React from "react";
 import styles from "./post.module.css";
@@ -21,6 +21,7 @@ export const Post = ({ displayName, username, text, avatar }) => {
         <div className={styles.postHeader}>
           <div className={styles.postHeaderText}>
             <h3>{displayName}</h3>
+            <p>@{username}</p>
           </div>
           <div className={styles.postHeaderDescription}>
             <p>{text}</p>
@@ -29,7 +30,7 @@ export const Post = ({ displayName, username, text, avatar }) => {
         <div className={styles.postFooter}>
           <ChatOutlineIcon />
           <HeartOutlineIcon />
-          <ShareIcon />
+          <OutlineBookmarkIcon />
         </div>
       </div>
     </div>

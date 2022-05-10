@@ -21,6 +21,7 @@
     display: flex;
     margin-top: 2rem;
     font-size: 2.2rem;
+    justify-content: space-between;
 }
 
 .postFooter>* {
@@ -38,8 +39,20 @@
     padding: 0
 }
 
+.postHeaderText {
+    display: flex;
+    align-items: center;
+}
+
 .postHeaderText>h3 {
     font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.postHeaderText>p {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-left: 5px;
     margin-bottom: 5px;
 }
 
