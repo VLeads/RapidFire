@@ -1,0 +1,177 @@
+.nav_parent {
+    display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+    height: 100%;
+    top: 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 2rem;
+    width: 26rem;
+    overflow-y: auto;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 1.6rem;
+    margin-top: 1rem;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 7.5rem);
+    margin-left: 1rem;
+}
+
+.navList {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.userAccount:hover,
+.navList:hover {
+    background-color: #93AFD9;
+    transition: linear 0.2s;
+}
+
+.navIcon,
+.navText {
+    font-size: 2rem;
+    font-weight: 400;
+    vertical-align: middle;
+    color: var(--COLOR-TEXT-NORMAL);
+}
+
+.navText {
+    margin-left: 1rem;
+}
+
+.navIcon {
+    font-size: 3rem;
+}
+
+.navText_active {
+    font-weight: bold;
+}
+
+.btnTweet {
+    margin-top: 3.5rem;
+    padding: 1.8rem 2.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    width: 100%;
+}
+
+.userAccount {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.userPic {
+    width: 5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.userDetails>p {
+    margin: 0 1rem;
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+.options {
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
+.userAccount:hover {
+    background-color: #93AFD9;
+    transition: linear 0.2s;
+    width: 100%;
+}
+
+
+/* ** Right Sidebar *** */
+
+.rightSidebarcontainer {
+    width: 35rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    position: sticky;
+    height: 100%;
+    top: 0;
+
+}
+
+.rightHeaderContainer {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    border: 1px solid var(--COLOR-TEXT-NORMAL);
+    width: 22rem;
+    border-radius: 20px;
+    padding: 12px 18px;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+}
+
+.search>input {
+    padding-left: 1.2rem;
+    border: none;
+    vertical-align: middle;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+.search>input:focus {
+    outline: none;
+}
+
+.searchIcon {
+    font-size: 2rem;
+    vertical-align: bottom
+}
+
+.modeIcon {
+    font-size: 3rem;
+    margin-left: 5px;
+    color: var(--COLOR-DARK);
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.cardHeading {
+    margin-bottom: 2rem;
+}
+
+.mylink {
+    margin-top: 1.5rem;
+    text-align: center;
+    text-decoration: underline;
+}
