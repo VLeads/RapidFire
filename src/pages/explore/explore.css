@@ -1,18 +1,18 @@
-.homepage__main {
+.explore__main {
     width: 100%;
     padding: 1rem 2rem;
     padding-top: 0;
     min-width: fit-content;
     height: 100%;
+    min-height: 100vh;
     border-left: 1px solid var(--COLOR-TEXT-NORMAL);
     border-right: 1px solid var(--COLOR-TEXT-NORMAL);
 }
 
-.homepage__header {
+.explore__header {
     background-color: var(--COLOR-BACKGROUND-OPACITY);
     position: sticky;
     top: 0;
     padding: 1rem;
     backdrop-filter: blur(2px);
-
 }

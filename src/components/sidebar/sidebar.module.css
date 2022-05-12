@@ -38,7 +38,7 @@
 
 .userAccount:hover,
 .navList:hover {
-    background-color: #93AFD9;
+    background-color: var(--COLOR-HOVER-BLUE);
     transition: linear 0.2s;
 }
 
@@ -71,6 +71,7 @@
     width: 100%;
 }
 
+.userAccountModalOption,
 .userAccount {
     display: flex;
     align-items: center;
@@ -78,6 +79,10 @@
     border-radius: 50px;
     cursor: pointer;
     padding: 6px 10px;
+}
+
+.userAccountModalOption {
+    margin-bottom: 0;
 }
 
 .userPic {
@@ -101,10 +106,33 @@
     vertical-align: middle;
 }
 
+.userAccountParent {
+    position: relative;
+}
+
 .userAccount:hover {
     background-color: #93AFD9;
     transition: linear 0.2s;
     width: 100%;
+}
+
+.checkIcon {
+    color: green
+}
+
+.userAccountModal {
+    position: absolute;
+    bottom: 9rem;
+    border: 1px solid var(--COLOR-TEXT-NORMAL);
+    border-radius: 10px;
+    display: flex;
+    background-color: var(--COLOR-BACKGROUND);
+    flex-direction: column;
+}
+
+.logoutBtn:hover {
+    background-color: var(--COLOR-HOVER-BLUE);
+    border-radius: inherit;
 }
 
 
