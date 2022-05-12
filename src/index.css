@@ -1,3 +1,10 @@
+:root {
+  --COLOR-TEXT-NORMAL: #2b333f;
+  --COLOR-BACKGROUND: #f3f3fa;
+  --COLOR-BACKGROUND-OPACITY: rgba(243, 243, 250, 0.522);
+  --COLOR-DARK: #1c1b1b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +13,32 @@
 
 html {
   font-size: 62.5%;
-
   scroll-behavior: smooth;
 }
 
 body {
   font-size: 1.6rem;
+  height: 100%;
+  max-width: 135rem;
+  margin: auto;
+  background-color: var(--COLOR-BACKGROUND);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #257ace;
+  transition: linear 0.2s;
+}
+
+.btn-warning:hover {
+  background-color: #efba1c;
+  color: black;
+  transition: linear 0.2s;
 }
