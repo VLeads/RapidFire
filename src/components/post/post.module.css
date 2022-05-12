@@ -3,9 +3,13 @@
     border-radius: 50%;
 }
 
+.postContainer {
+
+    border-bottom: 2px solid var(--COLOR-TEXT-NORMAL);
+}
+
 .post {
     display: flex;
-    border-bottom: 1px solid var(--COLOR-TEXT-NORMAL);
 }
 
 .post:last-child {
@@ -22,6 +26,7 @@
     margin-top: 2rem;
     font-size: 2.2rem;
     justify-content: space-between;
+    position: relative;
 }
 
 .postFooter>* {
@@ -60,4 +65,72 @@
     padding-top: 20px;
     padding-right: 12px;
     padding-left: 5px;
+}
+
+.postReact {
+    display: flex;
+    align-items: center;
+}
+
+.postReactCount {
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.commentContainer {
+    width: 100%;
+
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid #aaa4a4
+}
+
+.commentContainer>input:focus {
+    outline: none;
+}
+
+.commentInput {
+    display: flex;
+    align-items: center;
+}
+
+.commentInput>input {
+    font-size: 1.6rem;
+}
+
+.commentInput>input:focus {
+    outline: none
+}
+
+.commentBox {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--COLOR-TEXT-NORMAL);
+}
+
+.replyBtn {
+    border-radius: 20px;
+}
+
+
+.emojiPickerContainer {
+    cursor: pointer;
+    position: relative;
+    color: var(--COLOR-TEXT-NORMAL);
+    font-size: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.emojiPicker {
+    position: absolute;
+    left: -10rem;
+    z-index: 5;
+}
+
+.user {
+    font-size: 3.5rem;
+    margin-right: 1rem;
 }
