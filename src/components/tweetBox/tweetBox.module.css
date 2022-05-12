@@ -59,6 +59,7 @@
 .emojiPicker {
     position: absolute;
     left: -2rem;
+    z-index: 5;
 }
 
 .btnContainer {
