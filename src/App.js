@@ -1,4 +1,5 @@
 import { LeftSidebar, RightSidebar } from "components";
+import MockmanEs from "mockman-js";
 import { Bookmarks, Explore, Homepage, PageNotFound, Profile } from "pages";
 import { Route, Routes } from "react-router-dom";
 import {
@@ -20,6 +21,7 @@ function App() {
         <Route path={ROUTE_BOOKMARKS} element={<Bookmarks />} />
         <Route path={ROUTE_PROFILE} element={<Profile />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/mockman" element={<MockmanEs />} />
       </Routes>
       <RightSidebar />
     </div>

@@ -4,6 +4,7 @@
   --COLOR-BACKGROUND-OPACITY: rgba(243, 243, 250, 0.522);
   --COLOR-DARK: #1c1b1b;
   --COLOR-HOVER-BLUE: #93AFD9;
+  
 }
 
 * {
@@ -40,6 +41,12 @@ a {
 
 .btn-warning:hover {
   background-color: #efba1c;
+  color: black;
+  transition: linear 0.2s;
+}
+
+.btn-info:hover {
+  background-color: #29c0eef4;
   color: black;
   transition: linear 0.2s;
 }

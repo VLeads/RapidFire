@@ -1,7 +1,7 @@
 .tweetBoxContainer {
     margin-top: 0.5rem;
     width: 100%;
-    border-bottom: 2px solid var(--COLOR-TEXT-NORMAL);
+    border-bottom: 3px solid var(--COLOR-TEXT-NORMAL);
 }
 
 .tweetBoxInput {
@@ -43,11 +43,23 @@
 .icons {
     margin-top: 1rem;
     font-size: 2.5rem;
+    display: flex;
 }
 
 .icons>* {
-    margin-right: 10px;
+    margin-right: 3rem;
     color: var(--primary-color)
+}
+
+.emojiPickerContainer {
+    cursor: pointer;
+    position: relative;
+}
+
+.emojiPicker {
+    position: absolute;
+    left: -2rem;
+    z-index: 5;
 }
 
 .btnContainer {
@@ -55,11 +67,40 @@
     justify-content: space-between;
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
-
 }
+
+.createTweetRightSide {
+    display: flex;
+}
+
 
 .tweetBtn {
     border-radius: 30px;
     padding-left: 2.1rem;
     padding-right: 2.1rem;
+    margin-left: 3rem
+}
+
+
+.charCountCircle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.acceptCharCount {
+    border: 1px solid var(--primary-color)
+}
+
+.rejectCharCount {
+    border: 1px solid #ef1717;
+    color: #ef1717
 }

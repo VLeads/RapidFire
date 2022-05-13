@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./user.module.css";
 
-export const User = ({ imgsrc, username, userid }) => {
+export const User = ({ imgsrc, username, userid, showFollow }) => {
   return (
     <div className={styles.userAccount}>
       <div>
@@ -11,11 +11,17 @@ export const User = ({ imgsrc, username, userid }) => {
         <p className={styles.userName}>{username}</p>
         <p>@{userid}</p>
       </div>
-      <div>
-        <button className={` btn btn-warning ${styles.btnFollow} ${styles.hi}`}>
-          Follow
-        </button>
-      </div>
+      {showFollow === true ? (
+        <div>
+          <button
+            className={` btn btn-warning ${styles.btnFollow} ${styles.hi}`}
+          >
+            Follow
+          </button>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

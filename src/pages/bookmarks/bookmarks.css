@@ -17,6 +17,7 @@
     backdrop-filter: blur(2px);
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .bookmarks__header-option-parent {

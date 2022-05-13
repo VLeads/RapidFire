@@ -10,12 +10,11 @@ export const RightSidebar = () => {
       <div className={styles.rightHeaderContainer}>
         <div className={styles.search}>
           <SearchIcon className={styles.searchIcon} />
-          <input type="search" maxlength="30" placeholder="Search RapidFire" />
+          <input type="search" maxLength="30" placeholder="Search RapidFire" />
         </div>
         <div className={styles.modeIcon}>
-        <MoonIcon />
+          <MoonIcon />
         </div>
-          
       </div>
       <div className={`card-vertical ${styles.card}`}>
         <h3 className={styles.cardHeading}>Who to follow</h3>
@@ -23,16 +22,19 @@ export const RightSidebar = () => {
           imgsrc={vishalpic}
           username={"Vishal Kumar"}
           userid={"Vishalk01234"}
+          showFollow={true}
         />
         <User
           imgsrc={vishalpic}
           username={"Vishal Kumar"}
           userid={"Vishalk01234"}
+          showFollow={true}
         />
         <User
           imgsrc={vishalpic}
           username={"Vishal Kumar"}
           userid={"Vishalk01234"}
+          showFollow={true}
         />
       </div>
       <div className={styles.mylink}>
