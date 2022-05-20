@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { LeftSidebarData } from "data/left-sidebar-data";
 import { Link, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { LeftSidebarData } from "data/left-sidebar-data";
 import styles from "./sidebar.module.css";
 import vishalpic from "assets/vishalpic.png";
 import { CheckIcon, OptionHorizontalIcon } from "assets/icons/icons";
+import { logoutHandler } from "redux/slices/authSlice";
+import { ROUTE_LANDING } from "utils";
 
 export const LeftSidebar = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const [isUserAccountOpen, setIsUserAccountOpen] = useState(false);
 
@@ -16,11 +21,13 @@ export const LeftSidebar = () => {
     <aside className={styles.nav_parent}>
       <nav className={styles.nav}>
         <div>
-          <img
-            className={styles.logo}
-            src={logoImg.src}
-            alt={logoImg.altText}
-          />
+          <Link to="/home">
+            <img
+              className={styles.logo}
+              src={logoImg.src}
+              alt={logoImg.altText}
+            />
+          </Link>
         </div>
         <div className={styles.linkContainer}>
           <div>
@@ -49,10 +56,6 @@ export const LeftSidebar = () => {
                 );
               })}
             </ul>
-
-            {/* <button className={`btn btn-primary ${styles.btnTweet}`}>
-              Broadcast
-            </button> */}
           </div>
           <div className={styles.userAccountParent}>
             <div
@@ -94,7 +97,13 @@ export const LeftSidebar = () => {
                     <CheckIcon />
                   </div>
                 </div>
-                <button className={`btn ${styles.logoutBtn}`}>
+                <button
+                  className={`btn ${styles.logoutBtn}`}
+                  onClick={() => {
+                    dispatch(logoutHandler());
+                    toast.error("Logged out successfully");
+                  }}
+                >
                   Logout @Vishalk01234
                 </button>
               </div>

@@ -1,10 +1,13 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./profile.css";
 import resultImg from "assets/images/result-bg.jpg";
 import avatar from "assets/vishalpic.png";
 import { Post } from "components";
 
 export const Profile = () => {
+  // const dispatch = useDispatch();
+
   return (
     <div className="profile__main">
       <div className="profile__header">

@@ -1,12 +1,6 @@
 .app {
-    display: flex;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
     position: relative;
     height: 100%;
-    max-width: 1300px;
 }
 
 .flex {
