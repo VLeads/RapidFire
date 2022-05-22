@@ -4,7 +4,7 @@
   --COLOR-BACKGROUND-OPACITY: rgba(243, 243, 250, 0.522);
   --COLOR-DARK: #1c1b1b;
   --COLOR-HOVER-BLUE: #93AFD9;
-  
+
 }
 
 * {
@@ -21,7 +21,6 @@ html {
 body {
   font-size: 1.6rem;
   height: 100%;
-  max-width: 135rem;
   margin: auto;
   background-color: var(--COLOR-BACKGROUND);
 }
