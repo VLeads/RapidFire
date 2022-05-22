@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./homepage.css";
 import { Post, TweetBox } from "components";
 import avatar from "assets/vishalpic.png";
 
 export const Homepage = () => {
+  const dispatch = useDispatch();
+  // const { users } = useSelector((state) => state.users);
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <div className="homepage__main">
       <div className="homepage__header">

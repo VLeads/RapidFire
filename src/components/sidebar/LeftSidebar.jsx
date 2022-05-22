@@ -101,7 +101,7 @@ export const LeftSidebar = () => {
                   className={`btn ${styles.logoutBtn}`}
                   onClick={() => {
                     dispatch(logoutHandler());
-                    toast.error("Logged out successfully");
+                    toast.success("Logged out successfully");
                   }}
                 >
                   Logout @Vishalk01234

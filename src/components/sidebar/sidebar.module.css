@@ -181,6 +181,10 @@
     vertical-align: bottom
 }
 
+.following {
+    background-color: #efef1d;
+}
+
 .modeIcon {
     font-size: 3rem;
     margin-left: 5px;
@@ -202,4 +206,43 @@
     margin-top: 1.5rem;
     text-align: center;
     text-decoration: underline;
+}
+
+.userAccAccount {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 6px;
+    justify-content: space-between;
+}
+
+
+.userAccAccountWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.userAccPic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.userAccDetails>p {
+    margin: 0 1rem;
+    line-height: 2.1rem;
+    font-size: 1.5rem;
+}
+
+.userAccName {
+    font-weight: bold;
+}
+
+.btnFollow {
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-left: 2rem
 }

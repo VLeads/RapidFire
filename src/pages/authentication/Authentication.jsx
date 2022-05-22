@@ -25,7 +25,6 @@ export const Authentication = () => {
           Rapid <span style={{ color: "orange" }}>Fire</span>
         </div>
         <div className="made-with">
-          
           <p>
             Made with ❤️ by{" "}
             <a
@@ -35,6 +34,7 @@ export const Authentication = () => {
                 color: "orange",
                 fontWeight: "bold",
               }}
+              target="_blank"
             >
               Vishal Kumar
             </a>

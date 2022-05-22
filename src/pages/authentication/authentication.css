@@ -19,13 +19,13 @@
 }
 
 .auth-left>h2 {
-    font-size: 4rem;
+    font-size: 5rem;
     padding: 2rem
 }
 
 .auth-left>h2:nth-child(2) {
     color: #4c4cfa;
-    font-size: 8rem;
+    font-size: 10rem;
 }
 
 .auth-left>.logo-name {
@@ -88,16 +88,14 @@
 }
 
 .logo-icon {
-    width: 9rem;
-    height: 9rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .signup-form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: auto;
 }
-
-
 
 .password-input {
     display: flex;
