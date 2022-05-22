@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./comment.module.css";
-import { User } from "components/user/User";
 
 export const Comment = ({ avatar, displayName, username, msg }) => {
   return (

@@ -1,0 +1,96 @@
+.customModal {
+    width: 50rem !important;
+    max-height: 63rem;
+    padding: 10px;
+}
+
+.imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+.cover {
+    height: 15rem;
+    width: 100%;
+}
+
+.avatarPic {
+    position: absolute;
+    bottom: -5rem;
+    left: 2rem;
+    filter: brightness(85%);
+}
+
+.avatarPic>div {
+    position: relative;
+}
+
+.avatarPic img {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.editImgInput,
+.avatarCameraIcon {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: whitesmoke;
+    opacity: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3.5rem;
+    left: 3.3rem;
+    color: black;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.editCoverImgInput,
+.coverCameraIcon {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: whitesmoke;
+    opacity: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 45%;
+    left: 48%;
+    color: black;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.editCoverImgInput {
+    opacity: 0;
+}
+
+.avatarCameraIcon:hover {
+    cursor: pointer;
+}
+
+.avatarCameraIcon,
+.editImgInput {
+    cursor: pointer;
+}
+
+.editImgInput {
+    opacity: 0;
+}
+
+
+.inputGroupCustom {
+    margin-top: 4rem
+}
+
+.customBtn {
+    display: flex;
+    margin-left: auto;
+}

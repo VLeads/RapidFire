@@ -110,7 +110,7 @@ export const Signup = ({ isSignupOpen, setIsSignupOpen }) => {
                     maxLength="28"
                     type={inputType}
                     name="password"
-                    placeholder="******"
+                    placeholder="password"
                     onChange={inputChange}
                     value={signupFormData.password}
                     required

@@ -82,7 +82,7 @@ export const Login = ({ isLoginOpen, setIsLoginOpen }) => {
                   <input
                     className="input-box"
                     type={inputType}
-                    placeholder="******"
+                    placeholder="password"
                     name="password"
                     maxLength="28"
                     onChange={inputChange}
