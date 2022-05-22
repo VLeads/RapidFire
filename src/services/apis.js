@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
-
 export const loginApi = (data) => {
   return axios.post("/api/auth/login", data);
 };
@@ -14,7 +12,7 @@ export const getAllUsersApi = () => {
   return axios.get("/api/users");
 };
 
-export const followUserApi = (id) => {
+export const followUserApi = (token, id) => {
   return axios.post(
     `/api/users/follow/${id}`,
     {},
@@ -26,7 +24,7 @@ export const followUserApi = (id) => {
   );
 };
 
-export const unFollowUserApi = (id) => {
+export const unFollowUserApi = (token, id) => {
   console.log("id", id);
   return axios.post(
     `/api/users/unfollow/${id}`,
@@ -39,11 +37,11 @@ export const unFollowUserApi = (id) => {
   );
 };
 
-export const getUserApi = (id) => {
+export const getUserApi = (token, id) => {
   return axios.get(`/api/users/${id}`);
 };
 
-export const editUserApi = (userData) => {
+export const editUserApi = (token, userData) => {
   return axios.post(
     `/api/users/edit`,
     { userData },

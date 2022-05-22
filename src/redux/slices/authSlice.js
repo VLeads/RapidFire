@@ -34,7 +34,8 @@ export const editUser = createAsyncThunk(
   "auth/editUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await editUserApi(userData);
+      const token = localStorage.getItem("token");
+      const response = await editUserApi(token, userData);
       console.log("edit", response.data);
       return response.data;
     } catch (error) {
@@ -47,7 +48,8 @@ export const followUser = createAsyncThunk(
   "auth/followUser",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await followUserApi(id);
+      const token = localStorage.getItem("token");
+      const response = await followUserApi(token, id);
       toast.success("followed");
       return response.data.followUser;
     } catch (error) {
@@ -60,7 +62,8 @@ export const unFollowUser = createAsyncThunk(
   "auth/unFollowUser",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await unFollowUserApi(id);
+      const token = localStorage.getItem("token");
+      const response = await unFollowUserApi(token, id);
       console.log("res-thunk", id, response.data);
       toast.success("unfollowed");
       return response.data.followUser;
