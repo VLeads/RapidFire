@@ -71,6 +71,7 @@
 
 .createTweetRightSide {
     display: flex;
+    align-items: center;
 }
 
 
@@ -103,4 +104,10 @@
 .rejectCharCount {
     border: 1px solid #ef1717;
     color: #ef1717
+}
+
+/*  for edit post modal  */
+
+.customModal {
+    width: 52rem !important;
 }

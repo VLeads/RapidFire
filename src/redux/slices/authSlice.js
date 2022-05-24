@@ -19,10 +19,10 @@ export const login = createAsyncThunk("auth/login", (e, data) => {
   return loginApi(
     e.target.value === "guest"
       ? {
-          username: "vishalk01234",
+          username: "Vishalk01234",
           password: "12345678",
         }
-      : JSON.stringify(data)
+      : data
   ).then((response) => response.data);
 });
 
@@ -36,7 +36,7 @@ export const editUser = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await editUserApi(token, userData);
-      console.log("edit", response.data);
+
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
@@ -64,7 +64,7 @@ export const unFollowUser = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await unFollowUserApi(token, id);
-      console.log("res-thunk", id, response.data);
+
       toast.success("unfollowed");
       return response.data.followUser;
     } catch (error) {
@@ -91,7 +91,7 @@ const authSlice = createSlice({
       localStorage.setItem("token", JSON.stringify(state.token));
 
       state.user = action.payload.foundUser;
-      console.log("login", action.payload);
+
       localStorage.setItem("user", JSON.stringify(state.user));
       toast.success("LoggedIn successfully");
       state.loading = "success";
@@ -135,7 +135,6 @@ const authSlice = createSlice({
     });
 
     builder.addCase(editUser.fulfilled, (state, action) => {
-      console.log("edit", action.payload);
       state.user = action.payload.user;
       localStorage.setItem("user", JSON.stringify(state.user));
       state.status = "success";
@@ -168,7 +167,6 @@ const authSlice = createSlice({
     });
 
     builder.addCase(unFollowUser.fulfilled, (state, action) => {
-      console.log("unfollow", action.payload);
       state.user.following = state.user.following.filter(
         (item) => item.username !== action.payload?.username
       );

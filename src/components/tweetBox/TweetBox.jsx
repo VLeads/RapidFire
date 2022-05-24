@@ -1,25 +1,53 @@
 import { useState } from "react";
 import styles from "./tweetBox.module.css";
 import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
-import vishalPic from "assets/vishalpic.png";
+import placeholder from "assets/images/placeholder.png";
 import { EmojiIcon, GifIcon, ImageIcon } from "assets/icons/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost } from "redux/slices/postSlice";
 
-export const TweetBox = () => {
+export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
   const [charCount, setCharCount] = useState(210);
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
+  const { user } = useSelector((state) => state.auth);
 
   const [newTweetBoxContent, setNewTweetBoxContent] = useState("");
+
+  const dispatch = useDispatch();
 
   const onEmojiClick = (event, emojiObject) => {
     setNewTweetBoxContent((prevState) => prevState + emojiObject.emoji);
   };
 
+  const tweetSubmitHandler = (e) => {
+    e.preventDefault();
+
+    dispatch(
+      createPost({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        userPhoto: user.userPhoto,
+        content: newTweetBoxContent,
+      })
+    );
+    setNewTweetBoxContent("");
+  };
+
   return (
     <div className={styles.tweetBoxContainer}>
-      <form>
+      <form
+        onSubmit={(e) => {
+          tweetSubmitHandler(e);
+          setShowEmojiPicker(false);
+        }}
+      >
         <div className={styles.tweetBoxInput}>
           <div className={`avatar ${styles.avatarPic}`}>
-            <img src={vishalPic} alt="vishal avatar" loading="lazy" />
+            {user?.userPhoto ? (
+              <img src={user?.userPhoto} alt="avatar" loading="lazy" />
+            ) : (
+              <img src={placeholder} alt="avatar" loading="lazy" />
+            )}
           </div>
           <div className={styles.tweetBox}>
             <textarea
@@ -29,17 +57,18 @@ export const TweetBox = () => {
               rows={5}
               value={newTweetBoxContent}
               onChange={(event) => {
-                setCharCount(280 - event.target.value.length);
+                setCharCount(210 - event.target.value.length);
                 setNewTweetBoxContent(event.target.value);
               }}
+              required
             />
             <div className={styles.btnContainer}>
               <div className={styles.icons}>
                 <div>
-                  <ImageIcon />
+                  <ImageIcon onClick={() => setShowEmojiPicker(false)} />
                 </div>
                 <div>
-                  <GifIcon />
+                  <GifIcon onClick={() => setShowEmojiPicker(false)} />
                 </div>
                 <div className={styles.emojiPickerContainer}>
                   <EmojiIcon
@@ -70,7 +99,7 @@ export const TweetBox = () => {
                     {charCount}
                   </p>
                 )}
-                {charCount < 0 ? (
+                {charCount < 0 || charCount === 210 ? (
                   <button
                     className={`btn btn-primary ${styles.tweetBtn}`}
                     disabled
@@ -78,7 +107,10 @@ export const TweetBox = () => {
                     Tweet
                   </button>
                 ) : (
-                  <button className={`btn btn-primary ${styles.tweetBtn}`}>
+                  <button
+                    type="submit"
+                    className={`btn btn-primary ${styles.tweetBtn}`}
+                  >
                     Tweet
                   </button>
                 )}

@@ -18,7 +18,7 @@ export const users = [
     link: "https://github.com/VLeads/",
     bio: "From Neog",
     coverPhoto:
-      "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
+      "https://timelinecovers.pro/facebook-cover/download/programming-think-twice-code-once-facebook-cover.jpg",
     userPhoto:
       "https://images.unsplash.com/photo-1496440737103-cd596325d314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     createdAt: formatDate(),
@@ -28,7 +28,7 @@ export const users = [
     _id: uuid(),
     firstName: "Vishal",
     lastName: "Kumar",
-    username: "vishalk01234",
+    username: "Vishalk01234",
     password: "12345678",
     followers: [],
     following: [],
@@ -53,10 +53,28 @@ export const users = [
     bookmarks: [],
     link: "https://github.com/VLeads/",
     coverPhoto:
-      "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
+      "https://pbs.twimg.com/profile_banners/44196397/1576183471/1500x500",
     userPhoto:
       "https://archinect.imgix.net/uploads/9h/9h2z333wsybwd4z0.jpg?auto=compress%2Cformat",
     bio: "Revolutionizing the world |Owns Tesla, SpaceX, Hyperloop, Starlink etc.",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    firstName: "Sundar",
+    lastName: "Pichai",
+    username: "sundarpichai",
+    password: "12345678",
+    followers: [],
+    following: [],
+    bookmarks: [],
+    link: "https://github.com/VLeads/",
+    coverPhoto:
+      "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
+    userPhoto:
+      "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+    bio: "CEO,  Google and Alphabet",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },

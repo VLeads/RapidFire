@@ -46,7 +46,8 @@ function App() {
             <Route exact path={ROUTE_HOME} element={<Homepage />} />
             <Route path={ROUTE_EXPLORE} element={<Explore />} />
             <Route path={ROUTE_BOOKMARKS} element={<Bookmarks />} />
-            <Route path={ROUTE_PROFILE} element={<Profile />} />
+            <Route path={`${ROUTE_PROFILE}`} element={<Profile />} />
+            <Route path={`${ROUTE_PROFILE}/:username`} element={<Profile />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Route>

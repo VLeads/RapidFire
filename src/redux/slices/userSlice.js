@@ -20,9 +20,24 @@ export const getAllUsers = createAsyncThunk("users/getAllUsers", () => {
   return getAllUsersApi().then((response) => response.data);
 });
 
-export const getUser = createAsyncThunk("users/getUser", (id) => {
-  return getUserApi(id).then((response) => response.data);
-});
+// export const getUser = createAsyncThunk("users/getUser", (id) => {
+//   return getUserApi(id).then((response) => response.data);
+// });
+
+export const getUser = createAsyncThunk(
+  "users/getUser",
+  async (id, { rejectWithValue }) => {
+    try {
+      console.log("getuser-brfore", id);
+      const response = await getUserApi(id);
+      console.log("getuser-brfore", response.data);
+      return response.data;
+    } catch (error) {
+      console.log("getuser-error", id, error.response);
+      return rejectWithValue(error);
+    }
+  }
+);
 
 const userSlice = createSlice({
   name: "users",
@@ -56,6 +71,7 @@ const userSlice = createSlice({
       state.error = null;
     });
     builder.addCase(getUser.rejected, (state, action) => {
+      console.log("this", action);
       toast.error(
         action.error.message.slice(0, 41) +
           (action.error.message.length > 41 ? "..." : "")
