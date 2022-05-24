@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import vishalpic from "assets/vishalpic.png";
 import { ExternalLinkIcon, MoonIcon, SearchIcon } from "assets/icons/icons";
 import styles from "./sidebar.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "redux/slices/userSlice";
 import { followUser, unFollowUser } from "redux/slices/authSlice";
+import { CircularLoader } from "components";
 
 export const RightSidebar = () => {
   const dispatch = useDispatch();
-  const { usersData, error } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const { usersData, error, loading } = useSelector((state) => state.user);
   const { user } = useSelector((state) => state.auth);
   const [allUsers, setAllUsers] = useState([]);
-
-  useEffect(() => {
-    setAllUsers(usersData);
-  }, [usersData]);
-
-  console.log("right-side", usersData, user);
 
   return (
     <div className={styles.rightSidebarcontainer}>
@@ -31,15 +28,21 @@ export const RightSidebar = () => {
       </div>
       <div className={`card-vertical ${styles.card}`}>
         <h3 className={styles.cardHeading}>Who to follow</h3>
-        {allUsers &&
-          allUsers
+        {loading === "loading" ? (
+          <CircularLoader />
+        ) : (
+          usersData
             .filter((_) => _.username !== user?.username)
             .map((currentUser) => {
               return (
                 <div key={currentUser._id}>
                   <div className={styles.userAccAccount}>
                     <div className={styles.userAccAccountWrapper}>
-                      <div>
+                      <div
+                        onClick={() => {
+                          navigate(`/profile/${currentUser.username}`);
+                        }}
+                      >
                         <img
                           src={currentUser.userPhoto}
                           className={styles.userAccPic}
@@ -83,7 +86,8 @@ export const RightSidebar = () => {
                   </div>
                 </div>
               );
-            })}
+            })
+        )}
       </div>
       <div className={styles.mylink}>
         <a href="https://twitter.com/vishalk01234" target="_blank">
