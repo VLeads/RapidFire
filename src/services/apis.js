@@ -37,7 +37,6 @@ export const unFollowUserApi = (token, id) => {
 };
 
 export const getUserApi = (id) => {
-  console.log("getuser-api", id);
   return axios.get(`/api/users/${id}`);
 };
 
@@ -153,7 +152,6 @@ export const getCommentsByPostIdApi = (postId) => {
 };
 
 export const addCommentByPostIdApi = (token, data) => {
-  console.log("comment-payload", token, data);
   return axios.post(
     `/api/comments/add/${data?.id}`,
     { commentData: data?.comment },

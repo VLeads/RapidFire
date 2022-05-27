@@ -165,7 +165,7 @@ export const addCommentByPostId = createAsyncThunk(
       const token = localStorage.getItem("token");
       const response = await addCommentByPostIdApi(token, data);
       toast.success("comment added!");
-      console.log("res", response.data);
+
       return response.data.posts?.reverse();
     } catch (error) {
       console.log("error-payload", data);
@@ -211,7 +211,6 @@ const postSlice = createSlice({
       state.loading = "loading";
     });
     builder.addCase(deletePost.fulfilled, (state, action) => {
-      console.log("action", action.payload);
       state.posts = action.payload;
       state.loading = "success";
     });

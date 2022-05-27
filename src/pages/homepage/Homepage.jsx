@@ -24,8 +24,6 @@ export const Homepage = () => {
     }
   }, [posts]);
 
-  console.log("posts", posts);
-
   return (
     <div className="homepage__main">
       <div className="homepage__header flex">
@@ -42,14 +40,20 @@ export const Homepage = () => {
               <li
                 name="trending"
                 className="customList"
-                onClick={(e) => setFilter("latest")}
+                onClick={(e) => {
+                  setFilter("latest");
+                  setIsSortOptionOpen(false);
+                }}
               >
                 <button className="customListBtn">See Latest Posts</button>
               </li>
               <li
                 name="trending"
                 className="customList"
-                onClick={(e) => setFilter("trending")}
+                onClick={(e) => {
+                  setFilter("trending");
+                  setIsSortOptionOpen(false);
+                }}
               >
                 <button className="customListBtn">See Trending Posts</button>
               </li>

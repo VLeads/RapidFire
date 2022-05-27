@@ -10,18 +10,18 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et moltibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "Vishal posts some amazing content related to tech and programming. You muct visit his profile and follow him!",
     likes: {
       likeCount: 700,
       likedBy: [],
       dislikedBy: [],
     },
     comments: [],
-    firstName: "Adarsh",
-    lastName: "Balika",
-    username: "adarshbalika",
+    firstName: "Satya",
+    lastName: "Nadella",
+    username: "satyanadella",
     userPhoto:
-      "https://images.unsplash.com/photo-1496440737103-cd596325d314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },

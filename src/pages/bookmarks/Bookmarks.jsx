@@ -58,6 +58,7 @@ export const Bookmarks = () => {
               text={ele?.content}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
+              postComments={ele?.comments}
             />
           ))
         )}

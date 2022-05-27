@@ -41,6 +41,7 @@ export const Explore = () => {
               text={ele?.content}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
+              postComments={ele?.comments}
             />
           ))
         )}

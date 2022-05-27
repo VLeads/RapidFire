@@ -44,7 +44,7 @@ export const Post = ({
   const navigate = useNavigate();
 
   const [isCommentOpen, setIsCommentOpen] = useState(false);
-  // const [commentBoxContent, setCommentBoxContent] = useState("");
+
   const [commentBoxContent, setCommentBoxContent] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
@@ -95,7 +95,6 @@ export const Post = ({
 
   const addCommentHandler = (e) => {
     e.preventDefault();
-    console.log("payload", commentBoxContent);
     dispatch(
       addCommentByPostId({
         comment: {
