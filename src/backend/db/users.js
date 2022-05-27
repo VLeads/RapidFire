@@ -8,19 +8,19 @@ import { formatDate } from "../utils/authUtils";
 export const users = [
   {
     _id: uuid(),
-    firstName: "Adarsh",
-    lastName: "Balika",
-    username: "adarshbalika",
-    password: "adarshBalika123",
+    firstName: "Satya",
+    lastName: "Nadella",
+    username: "satyanadella",
+    password: "12345678",
     followers: [],
     following: [],
     bookmarks: [],
-    link: "https://github.com/VLeads/",
-    bio: "From Neog",
+    link: "https://news.microsoft.com/exec/satya-nadella/",
+    bio: "Chairman and CEO of Microsoft Corporation",
     coverPhoto:
-      "https://timelinecovers.pro/facebook-cover/download/programming-think-twice-code-once-facebook-cover.jpg",
+      "https://pbs.twimg.com/profile_banners/20571756/1553288451/1500x500",
     userPhoto:
-      "https://images.unsplash.com/photo-1496440737103-cd596325d314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -51,7 +51,7 @@ export const users = [
     followers: [],
     following: [],
     bookmarks: [],
-    link: "https://github.com/VLeads/",
+    link: "https://www.spacex.com/",
     coverPhoto:
       "https://pbs.twimg.com/profile_banners/44196397/1576183471/1500x500",
     userPhoto:

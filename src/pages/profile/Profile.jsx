@@ -26,7 +26,7 @@ export const Profile = () => {
     } else {
       setSingleUser(user);
     }
-  }, [usersData, user, singleUser, username]);
+  }, [usersData, user, username]);
 
   return (
     <>
