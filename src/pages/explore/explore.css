@@ -4,12 +4,12 @@
     padding-top: 0;
     height: 100%;
     min-height: 100vh;
-    border-left: 1px solid var(--COLOR-TEXT-NORMAL);
-    border-right: 1px solid var(--COLOR-TEXT-NORMAL);
+    border-left: 1px solid #2b333f;
+    border-right: 1px solid #2b333f;
 }
 
 .explore__header {
-    background-color: var(--COLOR-BACKGROUND-OPACITY);
+    background-color: var(--background-color-header);
     position: sticky;
     top: 0;
     padding: 1rem;

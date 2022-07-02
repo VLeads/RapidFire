@@ -9,7 +9,7 @@
 }
 
 .bookmarks__header {
-    background-color: var(--COLOR-BACKGROUND-OPACITY);
+    background-color: var(--background-color-header);
     position: sticky;
     top: 0;
     padding: 1rem;

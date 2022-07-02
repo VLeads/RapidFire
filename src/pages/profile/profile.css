@@ -11,7 +11,7 @@
 }
 
 .profile__header {
-    background-color: var(--COLOR-BACKGROUND-OPACITY);
+    background-color: var(--background-color-header);
     position: sticky;
     top: 0;
     padding: 1rem;
@@ -41,7 +41,11 @@
     border-radius: 50%;
     bottom: -6.5rem;
     left: 1.5rem;
-    border: 2px solid var(--COLOR-BACKGROUND);
+    border: 2px solid var(--background-color);
+}
+
+.bio_link {
+    color: var(--bio-link-color)
 }
 
 .profile-edit {
@@ -53,7 +57,7 @@
 .profile-edit .btn-edit-profile {
     border: 1px solid gray;
     border-radius: 30px;
-    color: var(--COLOR-TEXT-NORMAL)
+    color: var(--text-color)
 }
 
 .profile-edit .btn-edit-profile:hover {

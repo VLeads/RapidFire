@@ -6,4 +6,6 @@
     margin-right: auto;
     padding: 0 10px;
     max-width: 130rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }

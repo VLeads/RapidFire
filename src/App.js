@@ -33,12 +33,14 @@ import { getAllUsers } from "redux/slices/userSlice";
 function App() {
   const dispatch = useDispatch();
 
+  const { theme } = useSelector((store) => store.theme);
+
   useEffect(() => {
     dispatch(getAllUsers());
   }, []);
 
   return (
-    <div className="app">
+    <div className="app" data-theme={theme}>
       <Routes>
         <Route path={ROUTE_LANDING} element={<Authentication />} />
         <Route element={<RequireAuth />}>
@@ -53,7 +55,7 @@ function App() {
         </Route>
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }

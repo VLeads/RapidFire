@@ -3,18 +3,20 @@
     padding: 1rem 2rem;
     padding-top: 0;
     height: 100%;
-    border-left: 1px solid var(--COLOR-TEXT-NORMAL);
-    border-right: 1px solid var(--COLOR-TEXT-NORMAL);
+    border-left: 1px solid #2b333f;
+    border-right: 1px solid #2b333f;
 }
 
 .homepage__header {
-    background-color: var(--COLOR-BACKGROUND-OPACITY);
+    background-color: var(--background-color-header);
     position: sticky;
     top: 0;
     padding: 1rem;
     backdrop-filter: blur(2px);
     z-index: 3;
     justify-content: space-between;
+
+    border-radius: 0 0 1rem 1rem;
 }
 
 .optionExpand {

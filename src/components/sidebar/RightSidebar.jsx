@@ -2,15 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import vishalpic from "assets/vishalpic.png";
-import { ExternalLinkIcon, MoonIcon, SearchIcon } from "assets/icons/icons";
+import {
+  ExternalLinkIcon,
+  MoonIcon,
+  SearchIcon,
+  SunIcon,
+} from "assets/icons/icons";
 import styles from "./sidebar.module.css";
 import { getAllUsers } from "redux/slices/userSlice";
 import { followUser, unFollowUser } from "redux/slices/authSlice";
 import { CircularLoader } from "components";
+import { darkThemeHandler, lightThemeHandler } from "redux/slices/themeSlice";
 
 export const RightSidebar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { theme } = useSelector((state) => state.theme);
   const { usersData, error, loading } = useSelector((state) => state.user);
   const { user } = useSelector((state) => state.auth);
   const [allUsers, setAllUsers] = useState([]);
@@ -18,13 +25,21 @@ export const RightSidebar = () => {
   return (
     <div className={styles.rightSidebarcontainer}>
       <div className={styles.rightHeaderContainer}>
-        <div className={styles.search}>
-          <SearchIcon className={styles.searchIcon} />
-          <input type="search" maxLength="30" placeholder="Search RapidFire" />
-        </div>
-        <div className={styles.modeIcon}>
-          <MoonIcon />
-        </div>
+        {theme === "dark" ? (
+          <div
+            className={styles.modeIcon}
+            onClick={() => dispatch(lightThemeHandler())}
+          >
+            <SunIcon style={{ color: "orange" }} />
+          </div>
+        ) : (
+          <div
+            className={styles.modeIcon}
+            onClick={() => dispatch(darkThemeHandler())}
+          >
+            <MoonIcon />
+          </div>
+        )}
       </div>
       <div className={`card-vertical ${styles.card}`}>
         <h3 className={styles.cardHeading}>Who to follow</h3>
