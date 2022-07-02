@@ -48,6 +48,9 @@
     cursor: pointer;
 }
 
+.filter-active {
+    background-color: #485e80;
+}
 
 .homepage__header-option-parent {
     position: relative;

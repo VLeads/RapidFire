@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./tweetBox.module.css";
 import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
 import placeholder from "assets/images/placeholder.png";
-import { EmojiIcon, GifIcon, ImageIcon } from "assets/icons/icons";
+import { CancelIcon, EmojiIcon, GifIcon, ImageIcon } from "assets/icons/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "redux/slices/postSlice";
 
@@ -11,12 +11,20 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
 
   const { user } = useSelector((state) => state.auth);
 
-  const [newTweetBoxContent, setNewTweetBoxContent] = useState("");
+  // const [newTweetBoxContent, setNewTweetBoxContent] = useState("");
+  const [newTweetBoxContent, setNewTweetBoxContent] = useState({
+    textContent: "",
+    pic: "",
+  });
 
   const dispatch = useDispatch();
 
   const onEmojiClick = (event, emojiObject) => {
-    setNewTweetBoxContent((prevState) => prevState + emojiObject.emoji);
+    // setNewTweetBoxContent((prevState) => prevState + emojiObject.emoji);
+    setNewTweetBoxContent({
+      ...newTweetBoxContent,
+      textContent: newTweetBoxContent?.textContent + emojiObject?.emoji,
+    });
   };
 
   const tweetSubmitHandler = (e) => {
@@ -30,7 +38,22 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
         content: newTweetBoxContent,
       })
     );
-    setNewTweetBoxContent("");
+    setNewTweetBoxContent({ textContent: "", pic: "" });
+  };
+
+  const onFileChange = async (e) => {
+    const file = e.target.files[0];
+
+    const toBase64 = (file) =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
+
+    let base64File = await toBase64(file);
+    setNewTweetBoxContent({ ...newTweetBoxContent, pic: base64File });
   };
 
   return (
@@ -55,20 +78,53 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
               type="text"
               placeholder="What's happening?"
               rows={5}
-              value={newTweetBoxContent}
+              value={newTweetBoxContent.textContent}
               onChange={(event) => {
                 setCharCount(210 - event.target.value.length);
-                setNewTweetBoxContent(event.target.value);
+                setNewTweetBoxContent({
+                  ...newTweetBoxContent,
+                  textContent: event.target.value,
+                });
               }}
               required
             />
+            {newTweetBoxContent.pic ? (
+              <div className={styles.imgUploaded}>
+                <img src={newTweetBoxContent.pic} alt="" />
+                <CancelIcon
+                  className={` ${styles.uploadImgCancel}`}
+                  onClick={() =>
+                    setNewTweetBoxContent({ ...newTweetBoxContent, pic: "" })
+                  }
+                />
+              </div>
+            ) : null}
             <div className={styles.btnContainer}>
               <div className={styles.icons}>
-                <div>
-                  <ImageIcon onClick={() => setShowEmojiPicker(false)} />
+                <div className={styles.imgIconPicker}>
+                  <ImageIcon />
+
+                  <input
+                    type="file"
+                    accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
+                    onChange={(e) => {
+                      onFileChange(e);
+                      setShowEmojiPicker(false);
+                    }}
+                    className={styles.imgIconInput}
+                  />
                 </div>
-                <div>
-                  <GifIcon onClick={() => setShowEmojiPicker(false)} />
+                <div className={styles.imgIconPicker}>
+                  <GifIcon />
+                  <input
+                    type="file"
+                    accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
+                    onChange={(e) => {
+                      onFileChange(e);
+                      setShowEmojiPicker(false);
+                    }}
+                    className={styles.imgIconInput}
+                  />
                 </div>
                 <div className={styles.emojiPickerContainer}>
                   <EmojiIcon

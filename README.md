@@ -18,20 +18,22 @@ $ npm start
 ## **Features -**
 
 - Feed Posts
-- Explore & Trending Posts
+- Explore trending posts
+- Sort Latest & Trending Posts
 - Add , Update & Delete Post
 - Comment
 - Bookmark post
-- User Profile Update
-- Sort post by latest and trending
+- Profile Page
+- Edit Profile
 - update background image as well
 - emoji enabled
-- Follow / Unfollow
+- Follow / Unfollow User
 - Like and Comment on Post
 - Authentication:
   - User Signup
   - User Login
   - User Logout
+- Dark Mode
 
 ## **Built with -**
 

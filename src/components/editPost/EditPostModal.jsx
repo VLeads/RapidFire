@@ -15,7 +15,7 @@ export const EditPostModal = ({
   avatar,
 }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [charCount, setCharCount] = useState(210 - parseInt(text.length));
+  const [charCount, setCharCount] = useState(210 - parseInt(text?.length));
 
   const { user } = useSelector((state) => state.auth);
 
