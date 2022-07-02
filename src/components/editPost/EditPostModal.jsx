@@ -28,7 +28,6 @@ export const EditPostModal = ({
   const dispatch = useDispatch();
 
   const onEmojiClick = (event, emojiObject) => {
-    // setNewTweetBoxContent((prevState) => prevState + emojiObject.emoji);
     setNewTweetBoxContent({
       ...newTweetBoxContent,
       textContent: newTweetBoxContent?.textContent + emojiObject?.emoji,

@@ -11,7 +11,6 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
 
   const { user } = useSelector((state) => state.auth);
 
-  // const [newTweetBoxContent, setNewTweetBoxContent] = useState("");
   const [newTweetBoxContent, setNewTweetBoxContent] = useState({
     textContent: "",
     pic: "",
