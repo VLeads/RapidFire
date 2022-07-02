@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LeftSidebarData } from "data/left-sidebar-data";
 import styles from "./sidebar.module.css";
 import vishalpic from "assets/vishalpic.png";
 import { CheckIcon, OptionHorizontalIcon } from "assets/icons/icons";
 import { logoutHandler } from "redux/slices/authSlice";
 import { ROUTE_LANDING } from "utils";
+import placeholder from "assets/images/placeholder.png";
 
 export const LeftSidebar = () => {
+  const [isUserAccountOpen, setIsUserAccountOpen] = useState(false);
+
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const [isUserAccountOpen, setIsUserAccountOpen] = useState(false);
+  const { user } = useSelector((state) => state.auth);
 
   const { logoImg, links } = LeftSidebarData;
 
@@ -63,15 +66,21 @@ export const LeftSidebar = () => {
               onClick={() => setIsUserAccountOpen((prev) => !prev)}
             >
               <div>
-                <img
-                  src={vishalpic}
-                  className={styles.userPic}
-                  loading="lazy"
-                />
+                {user?.userPhoto ? (
+                  <img
+                    src={vishalpic}
+                    className={styles.userPic}
+                    loading="lazy"
+                  />
+                ) : (
+                  <img src={placeholder} className={styles.userPic} />
+                )}
               </div>
               <div className={styles.userDetails}>
-                <p className={styles.userName}>Vishal Kumar</p>
-                <p>@Vishalk01234</p>
+                <p
+                  className={styles.userName}
+                >{`${user?.firstName} ${user?.lastName}`}</p>
+                <p>@{user?.username ? user?.username : user?.firstName}</p>
               </div>
 
               <div className={styles.options}>
@@ -81,16 +90,21 @@ export const LeftSidebar = () => {
             {isUserAccountOpen && (
               <div className={styles.userAccountModal}>
                 <div className={styles.userAccountModalOption}>
-                  <div>
+                  {user?.userPhoto ? (
                     <img
                       src={vishalpic}
                       className={styles.userPic}
                       loading="lazy"
                     />
-                  </div>
+                  ) : (
+                    <img src={placeholder} className={styles.userPic} />
+                  )}
+
                   <div className={styles.userDetails}>
-                    <p className={styles.userName}>Vishal Kumar</p>
-                    <p>@Vishalk01234</p>
+                    <p
+                      className={styles.userName}
+                    >{`${user?.firstName} ${user?.lastName}`}</p>
+                    <p>@{user?.username ? user?.username : user?.firstName}</p>
                   </div>
 
                   <div className={styles.checkIcon}>
@@ -104,7 +118,7 @@ export const LeftSidebar = () => {
                     toast.success("Logged out successfully");
                   }}
                 >
-                  Logout @Vishalk01234
+                  Logout @{user?.username ? user?.username : user?.firstName}
                 </button>
               </div>
             )}

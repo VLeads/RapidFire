@@ -40,7 +40,7 @@ export const createPost = createAsyncThunk(
   "posts/createPost",
   async (postData, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await createPostApi(token, postData);
 
       return response.data.posts.reverse();
@@ -56,7 +56,7 @@ export const editPost = createAsyncThunk(
   "posts/editPost",
   async (postData, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await editPostApi(token, postData._id, postData);
 
       return response.data.posts.reverse();
@@ -72,7 +72,7 @@ export const likePost = createAsyncThunk(
   "posts/likePost",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await likePostApi(token, postId);
 
       return response.data.posts.reverse();
@@ -87,7 +87,7 @@ export const dislikePost = createAsyncThunk(
   "posts/dislikePost",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await dislikePostApi(token, postId);
 
       return response.data.posts.reverse();
@@ -113,7 +113,7 @@ export const deletePost = createAsyncThunk(
   "posts/deletePost",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await deletePostByIdApi(token, postId);
 
       return response.data.posts?.reverse();
@@ -128,7 +128,7 @@ export const getCommentsByPostId = createAsyncThunk(
   "posts/getCommentsByPostId",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await getCommentsByPostIdApi(token, postId);
 
       return response.data.comments?.reverse();
@@ -143,7 +143,7 @@ export const deleteCommentByPostIdCommentId = createAsyncThunk(
   "posts/deleteCommentByPostIdCommentId",
   async ({ postId, commentId }, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await deleteCommentByPostIdCommentIdApi(
         token,
         postId,
@@ -162,7 +162,7 @@ export const addCommentByPostId = createAsyncThunk(
   "posts/addCommentByPostId",
   async (data, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await addCommentByPostIdApi(token, data);
       toast.success("comment added!");
 

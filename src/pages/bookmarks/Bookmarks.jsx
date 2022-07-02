@@ -33,18 +33,22 @@ export const Bookmarks = () => {
             <TweetLoader />
           </>
         ) : bookmarks?.length === 0 ? (
-          <div>Empty</div>
+          <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            Nothing to show...
+          </div>
         ) : (
           bookmarks?.map((ele) => (
             <Post
               key={ele._id}
               postId={ele._id}
-              displayName={ele.firstName + " " + ele.lastName}
+              displayName={ele?.firstName + " " + ele.lastName}
               username={ele?.username}
               text={ele?.content}
+              postPic={ele?.postPic}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
               postComments={ele?.comments}
+              userId={ele?._id}
             />
           ))
         )}

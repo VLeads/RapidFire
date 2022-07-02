@@ -132,6 +132,11 @@
     flex-direction: column;
 }
 
+
+.logoutBtn {
+    color: var(--text-color);
+}
+
 .logoutBtn:hover {
     background-color: var(--COLOR-HOVER-BLUE);
     border-radius: inherit;
@@ -196,7 +201,8 @@
 }
 
 .card {
-    width: 100%;
+    width: 30rem;
+    min-height: 20rem;
     height: auto;
     margin-top: 2rem;
     background: var(--background-color-card);
@@ -248,5 +254,6 @@
 .btnFollow {
     border-radius: 8px;
     padding: 5px 10px;
-    margin-left: 2rem
+    margin-left: 2rem;
+    margin-left: auto;
 }

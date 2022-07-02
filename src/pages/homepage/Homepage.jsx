@@ -90,7 +90,8 @@ export const Homepage = () => {
                 postId={ele._id}
                 displayName={ele?.firstName + " " + ele?.lastName}
                 username={ele?.username}
-                text={ele?.content?.textContent}
+                text={ele?.content}
+                postPic={ele?.postPic}
                 avatar={ele?.userPhoto}
                 likes={ele?.likes}
                 postComments={ele?.comments}
@@ -104,7 +105,8 @@ export const Homepage = () => {
               postId={ele._id}
               displayName={ele?.firstName + " " + ele?.lastName}
               username={ele?.username}
-              text={ele?.content?.textContent}
+              text={ele?.content}
+              postPic={ele?.postPic}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
               postComments={ele?.comments}

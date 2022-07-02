@@ -10,9 +10,9 @@ import { toast } from "react-toastify";
 
 const initialState = {
   status: "idle",
-  user: JSON.parse(localStorage.getItem("user")) || {},
+  user: JSON.parse(localStorage.getItem("social-user")) || {},
   error: "",
-  token: JSON.parse(localStorage.getItem("token")) || "",
+  token: JSON.parse(localStorage.getItem("social-token")) || "",
 };
 
 export const login = createAsyncThunk("auth/login", (e, data) => {
@@ -34,7 +34,7 @@ export const editUser = createAsyncThunk(
   "auth/editUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await editUserApi(token, userData);
 
       return response.data;
@@ -48,7 +48,7 @@ export const followUser = createAsyncThunk(
   "auth/followUser",
   async (id, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await followUserApi(token, id);
       toast.success("followed");
       return response.data.followUser;
@@ -62,7 +62,7 @@ export const unFollowUser = createAsyncThunk(
   "auth/unFollowUser",
   async (id, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await unFollowUserApi(token, id);
 
       toast.success("unfollowed");
@@ -88,11 +88,11 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
       state.token = action.payload.encodedToken;
-      localStorage.setItem("token", JSON.stringify(state.token));
+      localStorage.setItem("social-token", JSON.stringify(state.token));
 
       state.user = action.payload.foundUser;
 
-      localStorage.setItem("user", JSON.stringify(state.user));
+      localStorage.setItem("social-user", JSON.stringify(state.user));
       toast.success("LoggedIn successfully");
       state.loading = "success";
       state.error = "";
@@ -110,11 +110,11 @@ const authSlice = createSlice({
     builder.addCase(signup.fulfilled, (state, action) => {
       state.token = action.payload.encodedToken;
       localStorage.setItem(
-        "token",
+        "social-token",
         JSON.stringify(action.payload.encodedToken)
       );
       state.user = action.payload.createdUser;
-      localStorage.setItem("user", JSON.stringify(state.user));
+      localStorage.setItem("social-user", JSON.stringify(state.user));
       toast.success("LoggedIn successfully");
       state.loading = "success";
       state.error = "";
@@ -136,7 +136,7 @@ const authSlice = createSlice({
 
     builder.addCase(editUser.fulfilled, (state, action) => {
       state.user = action.payload.user;
-      localStorage.setItem("user", JSON.stringify(state.user));
+      localStorage.setItem("social-user", JSON.stringify(state.user));
       state.status = "success";
       state.error = "";
       toast.success("updated successfully");

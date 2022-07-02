@@ -20,7 +20,6 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
   const dispatch = useDispatch();
 
   const onEmojiClick = (event, emojiObject) => {
-    // setNewTweetBoxContent((prevState) => prevState + emojiObject.emoji);
     setNewTweetBoxContent({
       ...newTweetBoxContent,
       textContent: newTweetBoxContent?.textContent + emojiObject?.emoji,
@@ -35,7 +34,8 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
         firstName: user.firstName,
         lastName: user.lastName,
         userPhoto: user.userPhoto,
-        content: newTweetBoxContent,
+        content: newTweetBoxContent.textContent,
+        postPic: newTweetBoxContent.pic,
       })
     );
     setNewTweetBoxContent({ textContent: "", pic: "" });
