@@ -52,14 +52,16 @@
 
 .navText {
     margin-left: 1rem;
+    color: var(--text-color)
 }
 
 .navIcon {
     font-size: 3rem;
+    color: var(--text-color)
 }
 
 .navText_active {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .btnTweet {
@@ -126,7 +128,7 @@
     border: 1px solid var(--COLOR-TEXT-NORMAL);
     border-radius: 10px;
     display: flex;
-    background-color: var(--COLOR-BACKGROUND);
+    background-color: var(--background-color);
     flex-direction: column;
 }
 
@@ -187,8 +189,9 @@
 
 .modeIcon {
     font-size: 3rem;
-    margin-left: 5px;
-    color: var(--COLOR-DARK);
+    margin: 8px;
+    margin-top: 15px;
+    margin-left: auto;
     cursor: pointer;
 }
 
@@ -196,6 +199,7 @@
     width: 100%;
     height: auto;
     margin-top: 2rem;
+    background: var(--background-color-card);
 }
 
 .cardHeading {

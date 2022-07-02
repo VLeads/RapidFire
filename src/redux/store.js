@@ -3,6 +3,7 @@ import authReducer from "./slices/authSlice";
 import userReducer from "./slices/userSlice";
 import postReducer from "./slices/postSlice";
 import bookmarkReducer from "./slices/bookmarkSlice";
+import { themeReducer } from "./slices/themeSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     user: userReducer,
     post: postReducer,
     bookmark: bookmarkReducer,
+    theme: themeReducer,
   },
 });
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./bookmarks.css";
 import avatar from "assets/vishalpic.png";
 import { Post, TweetLoader } from "components";
@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllBookmarkPost } from "redux/slices/bookmarkSlice";
 
 export const Bookmarks = () => {
-  const [isBookmarkAllOptionOpen, setIsBookmarkAllOptionOpen] = useState(false);
   const dispatch = useDispatch();
 
   const { bookmarks, loading } = useSelector((state) => state.bookmark);
@@ -22,19 +21,6 @@ export const Bookmarks = () => {
     <div className="bookmarks__main">
       <div className="bookmarks__header">
         <h3>Bookmarks</h3>
-        <div className="bookmarks__header-option-parent">
-          <div
-            className="bookmarks__header-option"
-            onClick={() => setIsBookmarkAllOptionOpen((prev) => !prev)}
-          >
-            <OptionHorizontalIcon />
-          </div>
-          {isBookmarkAllOptionOpen && (
-            <div className="clearAllBookmarks">
-              <button className="btn btn-danger">Clear All Bookmarks</button>
-            </div>
-          )}
-        </div>
       </div>
       <div>
         {loading === "loading" ? (

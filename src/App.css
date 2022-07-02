@@ -1,7 +1,27 @@
+[data-theme="dark"] {
+    --background-color: rgb(28 36 64/1);
+    --text-color: #ffffff;
+    --background-color-header: rgb(11 24 41/0.3);
+    --background-color-chat: rgb(11 24 41);
+    --background-color-card: rgb(30 41 59/1);
+    --bio-link-color: rgb(100 158 255/1)
+}
+
+[data-theme="light"] {
+    --background-color: #f3f3fa;
+    --text-color: #2b333f;
+    --background-color-header: rgba(243, 243, 250, 0.522);
+    --background-color-chat: #c9d8eedd;
+    --background-color-card: #fff;
+    --bio-link-color: blue
+}
+
+
 .app {
     position: relative;
     height: 100%;
-    width: 100%
+    width: 100%;
+    background-color: var(--background-color);
 }
 
 .flex {

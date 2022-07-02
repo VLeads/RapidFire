@@ -85,11 +85,7 @@ export const Profile = () => {
 
             <div className="profile__header__body-description">
               <p>{singleUser.bio}</p>
-              <a
-                href={singleUser?.link}
-                target="_blank"
-                style={{ color: "blue" }}
-              >
+              <a href={singleUser?.link} target="_blank" className="bio_link">
                 {singleUser?.link}
               </a>
             </div>

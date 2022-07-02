@@ -107,7 +107,7 @@ export const Login = ({ isLoginOpen, setIsLoginOpen }) => {
               </div>
 
               <div className="select-box">
-                <label htmlFor="accept">
+                <label>
                   <input type="checkbox" name="accept" />
                   Remember me
                 </label>

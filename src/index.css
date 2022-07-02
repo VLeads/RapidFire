@@ -22,7 +22,8 @@ body {
   font-size: 1.6rem;
   height: 100%;
   margin: auto;
-  background-color: var(--COLOR-BACKGROUND);
+  background-color: var(--background-color);
+  color: var(--text-color)
 }
 
 ul {
