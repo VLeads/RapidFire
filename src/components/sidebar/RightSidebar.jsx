@@ -64,39 +64,41 @@ export const RightSidebar = () => {
                           loading="lazy"
                         />
                       </div>
-                      <div className={styles.userAccDetails}>
+                      <div
+                        className={styles.userAccDetails}
+                        onClick={() => {
+                          navigate(`/profile/${currentUser.username}`);
+                        }}
+                      >
                         <p className={styles.userAccName}>
                           {currentUser.firstName + " " + currentUser.lastName}
                         </p>
                         <p>@{currentUser.username}</p>
                       </div>
                     </div>
-                    <div>
-                      <div className={styles.followBtnWrapper}>
-                        {user?.following?.length &&
-                        user.following.some(
-                          (followingUser) =>
-                            followingUser?._id === currentUser?._id
-                        ) ? (
-                          <button
-                            className={` btn btn-warning ${styles.btnFollow} ${styles.following} `}
-                            onClick={() =>
-                              dispatch(unFollowUser(currentUser._id))
-                            }
-                          >
-                            Following
-                          </button>
-                        ) : (
-                          <button
-                            className={` btn btn-warning ${styles.btnFollow}`}
-                            onClick={() =>
-                              dispatch(followUser(currentUser._id))
-                            }
-                          >
-                            Follow
-                          </button>
-                        )}
-                      </div>
+
+                    <div className={styles.followBtnWrapper}>
+                      {user?.following?.length &&
+                      user.following.some(
+                        (followingUser) =>
+                          followingUser?._id === currentUser?._id
+                      ) ? (
+                        <button
+                          className={` btn btn-warning ${styles.btnFollow} ${styles.following} `}
+                          onClick={() =>
+                            dispatch(unFollowUser(currentUser._id))
+                          }
+                        >
+                          Following
+                        </button>
+                      ) : (
+                        <button
+                          className={` btn btn-warning ${styles.btnFollow}`}
+                          onClick={() => dispatch(followUser(currentUser._id))}
+                        >
+                          Follow
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

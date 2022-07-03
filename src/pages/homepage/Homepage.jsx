@@ -39,7 +39,9 @@ export const Homepage = () => {
             <div className="optionExpand">
               <li
                 name="trending"
-                className="customList"
+                className={`customList ${
+                  filter === "latest" && "filter-active"
+                }`}
                 onClick={(e) => {
                   setFilter("latest");
                   setIsSortOptionOpen(false);
@@ -49,7 +51,9 @@ export const Homepage = () => {
               </li>
               <li
                 name="trending"
-                className="customList"
+                className={`customList ${
+                  filter === "trending" && "filter-active"
+                }`}
                 onClick={(e) => {
                   setFilter("trending");
                   setIsSortOptionOpen(false);
@@ -87,6 +91,7 @@ export const Homepage = () => {
                 displayName={ele?.firstName + " " + ele?.lastName}
                 username={ele?.username}
                 text={ele?.content}
+                postPic={ele?.postPic}
                 avatar={ele?.userPhoto}
                 likes={ele?.likes}
                 postComments={ele?.comments}
@@ -101,6 +106,7 @@ export const Homepage = () => {
               displayName={ele?.firstName + " " + ele?.lastName}
               username={ele?.username}
               text={ele?.content}
+              postPic={ele?.postPic}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
               postComments={ele?.comments}

@@ -39,9 +39,11 @@ export const Explore = () => {
               displayName={ele?.firstName + " " + ele?.lastName}
               username={ele?.username}
               text={ele?.content}
+              postPic={ele?.postPic}
               avatar={ele?.userPhoto}
               likes={ele?.likes}
               postComments={ele?.comments}
+              userId={ele?._id}
             />
           ))
         )}

@@ -19,7 +19,7 @@ export const addToBookmarkPost = createAsyncThunk(
   "bookmarks/addToBookmarkPost",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await addToBookmarkApi(token, postId);
 
       return response.data.bookmarks.reverse();
@@ -34,7 +34,7 @@ export const removeFromBookmarkPost = createAsyncThunk(
   "bookmarks/removeFromBookmarkPost",
   async (postId, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await removeFromBookmarkApi(token, postId);
 
       return response.data.bookmarks;
@@ -49,7 +49,7 @@ export const getAllBookmarkPost = createAsyncThunk(
   "bookmarks/getAllBookmarkPost",
   async (tempdata, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("social-token");
       const response = await getAllBookmarkApi(token);
 
       return response.data.bookmarks;

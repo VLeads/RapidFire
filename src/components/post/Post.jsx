@@ -14,7 +14,7 @@ import {
 import styles from "./post.module.css";
 import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
 import { CircularLoader, Comment, EditPostModal } from "components";
-
+import placeholder from "assets/images/placeholder.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCommentByPostId,
@@ -34,6 +34,7 @@ export const Post = ({
   displayName,
   username,
   text,
+  postPic,
   avatar,
   bookmark,
   likes,
@@ -118,17 +119,26 @@ export const Post = ({
             navigate(`/profile/${username}`);
           }}
         >
-          <img
-            src={avatar}
-            alt="avatar"
-            className={styles.avatarImg}
-            loading="lazy"
-          />
+          {avatar ? (
+            <img
+              src={avatar}
+              alt="avatar"
+              className={styles.avatarImg}
+              loading="lazy"
+            />
+          ) : (
+            <img src={placeholder} className={styles.avatarImg} />
+          )}
         </div>
         <div className={styles.postBody}>
           <div className={styles.postHeader}>
             <div className={styles.postHeaderWrapper}>
-              <div className={styles.postHeaderText}>
+              <div
+                className={styles.postHeaderText}
+                onClick={() => {
+                  navigate(`/profile/${username}`);
+                }}
+              >
                 <h3>{displayName}</h3>
                 <p>@{username}</p>
               </div>
@@ -169,6 +179,9 @@ export const Post = ({
               onClick={() => setIsListExpand(false)}
             >
               <p>{text}</p>
+              {postPic ? (
+                <img src={postPic} alt="" className={styles.uploadedImg} />
+              ) : null}
             </div>
           </div>
           <div className={styles.postFooter}>
@@ -210,7 +223,15 @@ export const Post = ({
         <div className={styles.commentContainer}>
           <div className={styles.commentInput}>
             <div className={styles.user}>
-              <UserIcon />
+              {user?.userPhoto ? (
+                <img
+                  src={user?.userPhoto}
+                  className={styles.commentAvatar}
+                  alt="avatar"
+                />
+              ) : (
+                <UserIcon />
+              )}
             </div>
             <input
               className={styles.commentBox}
@@ -276,6 +297,7 @@ export const Post = ({
         postId={postId}
         text={text}
         avatar={avatar}
+        postPic={postPic}
       />
     </div>
   );

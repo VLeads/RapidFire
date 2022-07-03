@@ -55,7 +55,11 @@ function App() {
         </Route>
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
-      <ToastContainer autoClose={2000} />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        theme="colored"
+      />
     </div>
   );
 }
