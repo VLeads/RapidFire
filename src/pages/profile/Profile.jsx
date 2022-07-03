@@ -7,6 +7,7 @@ import { CircularLoader, EditProfileModal, Post } from "components";
 import { useParams } from "react-router-dom";
 import { getUser } from "redux/slices/userSlice";
 import { followUser, unFollowUser } from "redux/slices/authSlice";
+import placeholder from "assets/images/placeholder.png";
 
 export const Profile = () => {
   const { username } = useParams();
@@ -38,14 +39,26 @@ export const Profile = () => {
           <div className="profile__header__body">
             <div className="profile__header__body-images">
               <div className="background-img">
-                <img
-                  src={singleUser?.coverPhoto}
-                  alt="background"
-                  loading="lazy"
-                />
+                {singleUser?.coverPhoto ? (
+                  <img
+                    src={singleUser?.coverPhoto}
+                    alt="background"
+                    loading="lazy"
+                  />
+                ) : (
+                  <img src={resultImg} alt="background" loading="lazy" />
+                )}
               </div>
               <div className="avatar-img">
-                <img src={singleUser?.userPhoto} alt="avatar" loading="lazy" />
+                {singleUser?.userPhoto ? (
+                  <img
+                    src={singleUser?.userPhoto}
+                    alt="avatar"
+                    loading="lazy"
+                  />
+                ) : (
+                  <img src={placeholder} />
+                )}
               </div>
             </div>
             <div className="profile-edit">
@@ -112,6 +125,7 @@ export const Profile = () => {
                     displayName={ele?.firstName + " " + ele?.lastName}
                     username={ele?.username}
                     text={ele?.content}
+                    postPic={ele?.postPic}
                     avatar={ele?.userPhoto}
                     likes={ele?.likes}
                     postComments={ele?.comments}

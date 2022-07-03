@@ -154,7 +154,7 @@ export const TweetBox = ({ showEmojiPicker, setShowEmojiPicker }) => {
                     {charCount}
                   </p>
                 )}
-                {charCount < 0 || charCount === 210 ? (
+                {charCount < 0 ? (
                   <button
                     className={`btn btn-primary ${styles.tweetBtn}`}
                     disabled

@@ -68,7 +68,7 @@ export const LeftSidebar = () => {
               <div>
                 {user?.userPhoto ? (
                   <img
-                    src={vishalpic}
+                    src={user?.userPhoto}
                     className={styles.userPic}
                     loading="lazy"
                   />
@@ -92,7 +92,7 @@ export const LeftSidebar = () => {
                 <div className={styles.userAccountModalOption}>
                   {user?.userPhoto ? (
                     <img
-                      src={vishalpic}
+                      src={user?.userPhoto}
                       className={styles.userPic}
                       loading="lazy"
                     />

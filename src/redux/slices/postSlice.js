@@ -164,7 +164,7 @@ export const addCommentByPostId = createAsyncThunk(
     try {
       const token = localStorage.getItem("social-token");
       const response = await addCommentByPostIdApi(token, data);
-      toast.success("comment added!");
+      toast.success("comment added successfully!");
 
       return response.data.posts?.reverse();
     } catch (error) {
@@ -227,7 +227,7 @@ const postSlice = createSlice({
     builder.addCase(createPost.fulfilled, (state, action) => {
       state.posts = action.payload;
       state.loading = "success";
-      toast.success("Post created!");
+      toast.success("Post created successfully!");
     });
     builder.addCase(createPost.rejected, (state, action) => {
       console.log("action-error", action);
@@ -243,7 +243,7 @@ const postSlice = createSlice({
     builder.addCase(editPost.fulfilled, (state, action) => {
       state.posts = action.payload;
       state.loading = "success";
-      toast.success("Post Edited!");
+      toast.success("Post Edited successfully!");
     });
     builder.addCase(editPost.rejected, (state, action) => {
       console.log("action-error", action);

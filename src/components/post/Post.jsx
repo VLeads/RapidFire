@@ -15,7 +15,6 @@ import styles from "./post.module.css";
 import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
 import { CircularLoader, Comment, EditPostModal } from "components";
 import placeholder from "assets/images/placeholder.png";
-
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCommentByPostId,
@@ -133,13 +132,13 @@ export const Post = ({
         </div>
         <div className={styles.postBody}>
           <div className={styles.postHeader}>
-            <div
-              className={styles.postHeaderWrapper}
-              onClick={() => {
-                navigate(`/profile/${username}`);
-              }}
-            >
-              <div className={styles.postHeaderText}>
+            <div className={styles.postHeaderWrapper}>
+              <div
+                className={styles.postHeaderText}
+                onClick={() => {
+                  navigate(`/profile/${username}`);
+                }}
+              >
                 <h3>{displayName}</h3>
                 <p>@{username}</p>
               </div>

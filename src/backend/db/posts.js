@@ -27,6 +27,27 @@ export const posts = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
+
+  {
+    _id: uuid(),
+    content: "Created a Social Media App called 'Rapid Fire'",
+    likes: {
+      likeCount: 200,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments: [],
+    postPic:
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    firstName: "Vishal ",
+    lastName: "Kumar",
+    username: "Vishalk01234",
+    userPhoto:
+      "https://pbs.twimg.com/profile_images/1497645446579113986/BnL32tQn_400x400.jpg",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+  },
+
   {
     _id: uuid(),
     content: "Listen, I can't do miracles ok",
@@ -73,7 +94,8 @@ export const posts = [
       dislikedBy: [],
     },
     comments: [],
-    postPic: "",
+    postPic:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     firstName: "Sundar",
     lastName: "Pichai",
     username: "sundarpichai",
