@@ -87,8 +87,13 @@
     margin-bottom: 0;
 }
 
+.userPicWrapper {
+    width: 5rem;
+    height: 5rem;
+}
 .userPic {
     width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     vertical-align: middle;
 }

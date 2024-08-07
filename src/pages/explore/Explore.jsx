@@ -2,7 +2,6 @@ import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./explore.css";
 import { Post, TweetLoader } from "components";
-import avatar from "assets/vishalpic.png";
 import { getAllPosts } from "redux/slices/postSlice";
 
 export const Explore = () => {

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./bookmarks.css";
-import avatar from "assets/vishalpic.png";
 import { Post, TweetLoader } from "components";
 import { OptionHorizontalIcon } from "assets/icons/icons";
 import { useDispatch, useSelector } from "react-redux";

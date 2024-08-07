@@ -1,5 +1,8 @@
 import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
+import devbg from "assets/images/dev-bg.jpg";
+import sundarImg from "assets/images/Sundar_pichai.png";
+import satyaImg from "assets/images/satya.jpeg";
 
 /**
  * Posts can be added here.
@@ -22,8 +25,7 @@ export const posts = [
     firstName: "Satya",
     lastName: "Nadella",
     username: "satyanadella",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg",
+    userPhoto: satyaImg,
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -43,7 +45,7 @@ export const posts = [
     lastName: "Kumar",
     username: "Vishalk01234",
     userPhoto:
-      "https://pbs.twimg.com/profile_images/1497645446579113986/BnL32tQn_400x400.jpg",
+      devbg,
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -62,7 +64,7 @@ export const posts = [
     lastName: "Musk",
     username: "elonmusk",
     userPhoto:
-      "https://archinect.imgix.net/uploads/9h/9h2z333wsybwd4z0.jpg?auto=compress%2Cformat",
+      "https://img.freepik.com/premium-vector/portrait-elon-musk-vector-illustration-flat_953432-1482.jpg?w=740",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -79,8 +81,7 @@ export const posts = [
     firstName: "Vishal ",
     lastName: "Kumar",
     username: "Vishalk01234",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/1497645446579113986/BnL32tQn_400x400.jpg",
+    userPhoto: devbg,
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -99,8 +100,7 @@ export const posts = [
     firstName: "Sundar",
     lastName: "Pichai",
     username: "sundarpichai",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+    userPhoto: sundarImg,
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -119,7 +119,7 @@ export const posts = [
     lastName: "Musk",
     username: "elonmusk",
     userPhoto:
-      "https://archinect.imgix.net/uploads/9h/9h2z333wsybwd4z0.jpg?auto=compress%2Cformat",
+      "https://img.freepik.com/premium-vector/portrait-elon-musk-vector-illustration-flat_953432-1482.jpg?w=740",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
