@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./homepage.css";
 import { Post, TweetBox, TweetLoader } from "components";
-import avatar from "assets/vishalpic.png";
 import { getAllPosts } from "redux/slices/postSlice";
 import { OptionHorizontalIcon, StarsIcon } from "assets/icons/icons";
 

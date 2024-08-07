@@ -1,5 +1,9 @@
 import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
+import devbg from "assets/images/dev-bg.jpg";
+import sundarImg from "assets/images/Sundar_pichai.png";
+import satyaImg from "assets/images/satya.jpeg";
+
 /**
  * User Database can be added here.
  * You can add default users of your wish with different attributes
@@ -18,9 +22,8 @@ export const users = [
     link: "https://news.microsoft.com/exec/satya-nadella/",
     bio: "Chairman and CEO of Microsoft Corporation",
     coverPhoto:
-      "https://pbs.twimg.com/profile_banners/20571756/1553288451/1500x500",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg",
+      "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    userPhoto: satyaImg,
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -36,8 +39,7 @@ export const users = [
     link: "https://github.com/VLeads/",
     coverPhoto:
       "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/1497645446579113986/BnL32tQn_400x400.jpg",
+    userPhoto: devbg,
     bio: "Aspiring Full Stack developer 👨‍💻 | learning and sharing | neogcamp",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -53,9 +55,9 @@ export const users = [
     bookmarks: [],
     link: "https://www.spacex.com/",
     coverPhoto:
-      "https://pbs.twimg.com/profile_banners/44196397/1576183471/1500x500",
+      "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
     userPhoto:
-      "https://archinect.imgix.net/uploads/9h/9h2z333wsybwd4z0.jpg?auto=compress%2Cformat",
+      "https://img.freepik.com/premium-vector/portrait-elon-musk-vector-illustration-flat_953432-1482.jpg?w=740",
     bio: "Revolutionizing the world |Owns Tesla, SpaceX, Hyperloop, Starlink etc.",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -72,8 +74,7 @@ export const users = [
     link: "https://github.com/VLeads/",
     coverPhoto:
       "https://raw.githubusercontent.com/VLeads/RapidFire/dev/src/assets/images/result-bg.jpg",
-    userPhoto:
-      "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+    userPhoto: sundarImg,
     bio: "CEO,  Google and Alphabet",
     createdAt: formatDate(),
     updatedAt: formatDate(),

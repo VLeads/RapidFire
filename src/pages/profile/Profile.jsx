@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./profile.css";
 import resultImg from "assets/images/result-bg.jpg";
-import avatar from "assets/vishalpic.png";
 import { CircularLoader, EditProfileModal, Post } from "components";
 import { useParams } from "react-router-dom";
 import { getUser } from "redux/slices/userSlice";

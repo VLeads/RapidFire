@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { LeftSidebarData } from "data/left-sidebar-data";
 import styles from "./sidebar.module.css";
-import vishalpic from "assets/vishalpic.png";
 import { CheckIcon, OptionHorizontalIcon } from "assets/icons/icons";
 import { logoutHandler } from "redux/slices/authSlice";
 import { ROUTE_LANDING } from "utils";
@@ -65,7 +64,7 @@ export const LeftSidebar = () => {
               className={styles.userAccount}
               onClick={() => setIsUserAccountOpen((prev) => !prev)}
             >
-              <div>
+              <div className={styles.userPicWrapper}>
                 {user?.userPhoto ? (
                   <img
                     src={user?.userPhoto}
